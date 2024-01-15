@@ -6,17 +6,23 @@
 #include <array>
 #include <vector>
 
+
+struct Point3D    {float x, y, z;} ;
+struct Point2D    {float x, y;};
+struct Edge       {int y0, y0, x1, y1;};
+
+
 void draw(SDL_Renderer* renderer);
 
-void render_this(SDL_Renderer* renderer){
+void render_this(SDL_Renderer* renderer, std::vector<Point3D> shape){
     //set green pen
     SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
 
-    draw(renderer);
-    std::cout << "hi";
+    //draw(renderer);
+    //std::cout << "hi";
 }
 
-
+//2D test function
 void draw(SDL_Renderer* renderer){
 
     //draw box from just lines 

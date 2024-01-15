@@ -9,6 +9,8 @@
 void draw(SDL_Renderer* renderer);
 
 void render_this(SDL_Renderer* renderer){
+    //set green pen
+    SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
 
     draw(renderer);
     std::cout << "hi";
@@ -16,10 +18,6 @@ void render_this(SDL_Renderer* renderer){
 
 
 void draw(SDL_Renderer* renderer){
-    //set black backg with green pen
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    SDL_RenderClear(renderer);
-    SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
 
     //draw box from just lines 
     int vertexMatrix[4][2] = {{50,50}, {50,100}, {100,50}, {100,100}};

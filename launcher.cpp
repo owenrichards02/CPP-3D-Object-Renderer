@@ -19,6 +19,10 @@ int main(int argc, char** argv){
     {
         SDL_CreateWindowAndRenderer(1920, 1080, 0, &window, &renderer); 
     }
+
+    //set black BG
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_RenderClear(renderer);
     
     render_this(renderer);
 

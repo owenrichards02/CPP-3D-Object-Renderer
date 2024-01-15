@@ -26,11 +26,11 @@ int main(int argc, char** argv){
     
 
 
+
     //define obj here
+    std::vector<Point3D> shape = {{0, 0, 0}, {1, 0, 0}, {1, 1, 0}, {0, 1, 0}, {0, 0, 1}, {1, 0, 1}, {1, 1, 1}, {0, 1, 1}}; //unit cube
 
-
-
-    render_this(renderer);
+    render_this(renderer, shape);
 
     while (active)
     {

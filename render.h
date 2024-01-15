@@ -9,17 +9,29 @@
 
 struct Point3D    {float x, y, z;} ;
 struct Point2D    {float x, y;};
-struct Edge       {int y0, y0, x1, y1;};
+struct Edge       {int x1, y1, x2, y2;};
 
 
 void draw(SDL_Renderer* renderer);
+void drawEdges(SDL_Renderer* renderer, std::vector<Edge> edges);
 
 void render_this(SDL_Renderer* renderer, std::vector<Point3D> shape){
     //set green pen
     SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
 
+    std::vector<Edge> edges = {{50, 50, 50, 100}, {50, 50, 100, 50}};
+
+    drawEdges(renderer, edges);
     //draw(renderer);
     //std::cout << "hi";
+}
+
+
+void drawEdges(SDL_Renderer* renderer, std::vector<Edge> edges){
+    for (Edge i : edges){
+        SDL_RenderDrawLine(renderer, i.x1, i.y1, i.x2, i.y2);
+    }
+    SDL_RenderPresent(renderer);
 }
 
 //2D test function

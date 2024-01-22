@@ -28,9 +28,12 @@ int main(int argc, char** argv){
 
 
     //define obj here
-    std::vector<Point3D> shape = {{0, 0, 0}, {1, 0, 0}, {1, 1, 0}, {0, 1, 0}, {0, 0, 1}, {1, 0, 1}, {1, 1, 1}, {0, 1, 1}}; //unit cube
+    //unit cube example
+    std::vector<Point3D> shapeVerts = {{0, 0, 0}, {1, 0, 0}, {1, 1, 0}, {0, 1, 0}, {0, 0, 1}, {1, 0, 1}, {1, 1, 1}, {0, 1, 1}}; 
+    std::vector<Edge3D> shapeEdges = {{shapeVerts[0], shapeVerts[1]}, {shapeVerts[0], shapeVerts[3]}, {shapeVerts[0], shapeVerts[4]}, {shapeVerts[1], shapeVerts[2]}, {shapeVerts[1], shapeVerts[5]}, {shapeVerts[2], shapeVerts[3]}, {shapeVerts[2], shapeVerts[6]}, {shapeVerts[3], shapeVerts[7]}, {shapeVerts[4], shapeVerts[5]}, {shapeVerts[4], shapeVerts[7]}, {shapeVerts[5], shapeVerts[6]}, {shapeVerts[6], shapeVerts[7]}};
+    Shape3D _shape = {shapeVerts, shapeEdges};
 
-    render_this(renderer, shape);
+    render_this(renderer, _shape);
 
     while (active)
     {

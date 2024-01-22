@@ -7,29 +7,29 @@
 #include <vector>
 
 
-struct Point3D    {float x, y, z;} ;
 struct Point2D    {float x, y;};
-struct Edge       {int x1, y1, x2, y2;};
+struct Point3D    {float x, y, z;} ;
+struct Edge2D       {Point2D p1, p2;};
+struct Edge3D       {Point3D p1, p2;};
+struct Shape3D      {std::vector<Point3D> verts; std::vector<Edge3D> edges;};
 
 
 void draw(SDL_Renderer* renderer);
-void drawEdges(SDL_Renderer* renderer, std::vector<Edge> edges);
+void draw2DEdges(SDL_Renderer* renderer, std::vector<Edge2D> edges);
 
-void render_this(SDL_Renderer* renderer, std::vector<Point3D> shape){
+void render_this(SDL_Renderer* renderer, Shape3D _shape){
     //set green pen
     SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
 
-    std::vector<Edge> edges = {{50, 50, 50, 100}, {50, 50, 100, 50}};
-
-    drawEdges(renderer, edges);
-    //draw(renderer);
-    //std::cout << "hi";
+    //change this to deal with Shape
+    std::vector<Edge2D> _2D_edges = {{50, 50, 50, 100}, {50, 50, 100, 50}};
+    draw2DEdges(renderer, _2D_edges);
 }
 
 
-void drawEdges(SDL_Renderer* renderer, std::vector<Edge> edges){
-    for (Edge i : edges){
-        SDL_RenderDrawLine(renderer, i.x1, i.y1, i.x2, i.y2);
+void draw2DEdges(SDL_Renderer* renderer, std::vector<Edge2D> edges){
+    for (Edge2D i : edges){
+        SDL_RenderDrawLine(renderer, i.p1.x, i.p1.y, i.p2.x, i.p2.y);
     }
     SDL_RenderPresent(renderer);
 }

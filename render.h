@@ -1,17 +1,11 @@
 #ifndef render
 #define render
 
+#include "shape_structs.h"
 #include <SDL2/SDL.h>
 #include <iostream>
 #include <array>
 #include <vector>
-
-
-struct Point2D    {float x, y;};
-struct Point3D    {float x, y, z;} ;
-struct Edge2D       {Point2D p1, p2;};
-struct Edge3D       {Point3D p1, p2;};
-struct Shape3D      {std::vector<Point3D> verts; std::vector<Edge3D> edges;};
 
 
 void draw(SDL_Renderer* renderer);

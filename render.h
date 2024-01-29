@@ -6,6 +6,8 @@
 #include <iostream>
 #include <array>
 #include <vector>
+#include <numeric>
+#include "helpers.h"
 
 
 void draw(SDL_Renderer* renderer);

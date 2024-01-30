@@ -7,7 +7,7 @@
 #include <array>
 #include <vector>
 #include <numeric>
-#include "helpers.h"
+#include "linalg_helpers.h"
 
 
 void draw(SDL_Renderer* renderer);

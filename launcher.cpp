@@ -17,7 +17,7 @@ int main(int argc, char** argv){
         std::cout << "SDL_Init error: " << SDL_GetError() << std::endl;
     else
     {
-        SDL_CreateWindowAndRenderer(1920, 1080, 0, &window, &renderer); 
+        SDL_CreateWindowAndRenderer(1280, 720, 0, &window, &renderer); 
     }
 
     //set black BG

@@ -4,6 +4,7 @@
 #include "shape_structs.h"
 #include <math.h>
 
+//declarations
 float dotProd3D(Vector3D v1, Vector3D v2);
 float dotProd2D(Vector2D v1, Vector2D v2);
 
@@ -24,6 +25,11 @@ Vector3D subVecs3D(Vector3D v1, Vector3D v2);
 Vector2D addVecs2D(Vector2D v1, Vector2D v2);
 Vector2D subVecs2D(Vector2D v1, Vector2D v2);
 
+Matrix33 matrixMult33(Matrix33 m1, Matrix33 m2);
+Matrix22_2 matrixMult22 (Matrix22_2 m1, Matrix22_2 m2);
+
+
+//definitions
 float dotProd2D(Vector2D v1, Vector2D v2){
     return (v1.x * v2.x) + (v1.y * v2.y);
 }
@@ -88,6 +94,18 @@ Vector2D addVecs2D(Vector2D v1, Vector2D v2){
 
 Vector2D subVecs2D(Vector2D v1, Vector2D v2){
     return {v1.x - v2.x, v1.y - v2.y};
+}
+
+
+/* Matrix33 matrixMult33(Matrix33 m1, Matrix33 m2){
+
+    Matrix33 m3 = {
+
+    }
+} */
+
+Matrix22_2 matrixMult22 (Matrix22_2 m1, Matrix22_2 m2){
+    // do nothing
 }
 
 #endif
